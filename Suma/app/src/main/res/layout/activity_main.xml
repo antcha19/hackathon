@@ -5,24 +5,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Pantalla2">
+    tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/miMensaje"
+    <EditText
+        android:id="@+id/numero1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="saludo" />
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/numero2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
     <Button
-        android:id="@+id/miVolver"
+        android:id="@+id/Sumar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="volver" />
-
-    <ImageButton
-        android:id="@+id/imgvolver"
+        android:text="Sumar"/>
+    <TextView
+        android:id="@+id/resultado"
         android:layout_width="wrap_content"
-        android:layout_height="117dp"
-        android:src="@drawable/imagenprueba"/>
-
-
+        android:layout_height="wrap_content"/>
 </LinearLayout>

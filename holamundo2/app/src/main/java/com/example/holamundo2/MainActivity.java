@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Bundle miBundle = new Bundle();
                 String mensajePaso = "Te saludo " + mitexto.getText();
+                //muestro lo BUNDLE lo que paso
                 miBundle.putString("TEXTO", mensajePaso);
                 miIntent.putExtras(miBundle);
                 startActivity(miIntent);

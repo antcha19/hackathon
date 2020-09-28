@@ -19,7 +19,7 @@ public class Pantalla2 extends AppCompatActivity {
 
         final TextView otroSaludo=(TextView)findViewById(R.id.miMensaje);
         final Button volverBoton= (Button)findViewById(R.id.miVolver);
-        final ImageButton imageboton=(ImageButton)findViewById(R.id.imageButton2);
+        final ImageButton imageboton=(ImageButton)findViewById(R.id.imgvolver);
 
         Bundle miBundleRecoger = getIntent().getExtras();
         otroSaludo.setText(miBundleRecoger.getString("TEXTO"));
