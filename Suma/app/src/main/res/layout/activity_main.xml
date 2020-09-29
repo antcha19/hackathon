@@ -10,16 +10,18 @@
     <EditText
         android:id="@+id/numero1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
     <EditText
         android:id="@+id/numero2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
     <Button
         android:id="@+id/Sumar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sumar"/>
+        android:text="Sumar" />
+
     <TextView
         android:id="@+id/resultado"
         android:layout_width="wrap_content"
