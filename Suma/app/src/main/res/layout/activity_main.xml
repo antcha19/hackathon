@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/foto"
     tools:context=".MainActivity">
 
     <EditText
@@ -15,12 +16,27 @@
         android:id="@+id/numero2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-
     <Button
         android:id="@+id/Sumar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sumar" />
+        android:text="sumar" />
+    <Button
+        android:id="@+id/Restar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Restar" />
+    <Button
+        android:id="@+id/Multiplicacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Multiplicacion" />
+    <Button
+        android:id="@+id/Division"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Division" />
+
 
     <TextView
         android:id="@+id/resultado"

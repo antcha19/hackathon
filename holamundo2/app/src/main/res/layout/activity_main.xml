@@ -5,12 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorFondo"
     tools:context=".MainActivity">
+
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Saludo"/>
+        android:text="@string/mimensaje"/>
     <EditText
         android:id="@+id/mitexto"
         android:layout_width="wrap_content"
@@ -23,6 +26,10 @@
         android:text="pulsar!"/>
     <TextView
         android:id="@+id/milbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:src="@drawable/foto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

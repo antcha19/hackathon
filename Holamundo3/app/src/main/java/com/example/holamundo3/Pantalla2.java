@@ -36,6 +36,16 @@ public class Pantalla2 extends AppCompatActivity {
                 finish();
             }
         });
+
+        imageboton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent miIntent = new Intent(Pantalla2.this, MainActivity.class);
+                startActivity(miIntent);
+            }
+        });
+
+
     }
 
     /* Proceso para entender el ciclo de vida */

@@ -16,10 +16,19 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         final TextView resultadofinal =(TextView)findViewById(R.id.resultadofinal);
+        final TextView botonvolver =(TextView)findViewById(R.id.mibotonvolver);
 
 
         Bundle miBundlefinal = getIntent().getExtras();
         resultadofinal.setText(miBundlefinal.getString("TEXTO"));
+
+        botonvolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent miIntent = new Intent(MainActivity2.this, MainActivity.class);
+                startActivity(miIntent);
+            }
+        });
 
 
     }
