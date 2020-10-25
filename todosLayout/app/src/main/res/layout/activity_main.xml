@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+        <ImageButton
+            android:id="@+id/linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="76dp"
+            android:layout_marginLeft="76dp"
+            android:layout_marginTop="124dp"
+            app:layout_constraintEnd_toStartOf="@+id/table"
+            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/alert_dark_frame"
+            tools:ignore="InvalidId,MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textlinear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="76dp"
+            android:layout_marginLeft="76dp"
+            android:layout_marginTop="48dp"
+            android:text="LinearLayour"
+            app:layout_constraintEnd_toStartOf="@+id/texttable"
+            app:layout_constraintHorizontal_bias="0.022"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linear"
+            tools:ignore="MissingConstraints" />
+
+        <ImageButton
+            android:id="@+id/relative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="84dp"
+            android:layout_marginLeft="84dp"
+            android:layout_marginTop="52dp"
+            app:layout_constraintEnd_toStartOf="@+id/grid"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textlinear"
+            app:srcCompat="@android:drawable/alert_light_frame"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textrelative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="84dp"
+            android:layout_marginLeft="84dp"
+            android:text="RelativeLAyout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textgrid"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relative"
+            app:layout_constraintVertical_bias="0.213"
+            tools:ignore="MissingConstraints" />
+
+        <ImageButton
+            android:id="@+id/table"
+            android:layout_width="84dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="124dp"
+            android:layout_marginEnd="88dp"
+            android:layout_marginRight="88dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/arrow_up_float"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/texttable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="92dp"
+            android:layout_marginRight="92dp"
+            android:text="TableLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/table"
+            tools:ignore="MissingConstraints" />
+
+        <ImageButton
+            android:id="@+id/grid"
+            android:layout_width="86dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="84dp"
+            android:layout_marginRight="84dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/texttable"
+            app:srcCompat="@android:drawable/btn_star"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textgrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="88dp"
+            android:layout_marginRight="88dp"
+            android:text="GridLayout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/grid"
+            app:layout_constraintVertical_bias="0.229"
+            tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
