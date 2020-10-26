@@ -53,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int num1=0;
                 int num2=0;
-                int suma;
+                int restar;
                 num1= Integer.parseInt(minumero1.getText().toString());
                 num2= Integer.parseInt(minumero2.getText().toString());
-                suma= num1-num2;
-                  miresultado.setText(String.valueOf(suma));
+                restar= num1-num2;
+                  miresultado.setText(String.valueOf(restar));
 
                 Intent miIntent = new Intent(MainActivity.this, MainActivity2.class);
                 Bundle miBundle = new Bundle();
@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(miIntent);
             }
         });
+
         miboton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(miIntent);
             }
         });
+
         miboton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
