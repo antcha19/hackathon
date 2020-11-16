@@ -23,7 +23,9 @@ public class Pantalla2 extends AppCompatActivity {
 
         Bundle miBundleRecoger = getIntent().getExtras();
         otroSaludo.setText(miBundleRecoger.getString("TEXTO"));
+
         final String completarSaludo=miBundleRecoger.getString("TEXTO");
+
         volverBoton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

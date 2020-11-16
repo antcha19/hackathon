@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
              }
          });
 
-        Bundle miBundleRecoger = getIntent().getExtras();
-        text2.setText(miBundleRecoger.getString("TEXTO"));
+
+
 
 
           text.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                   }
               }
           });
+
 
 
 
