@@ -14,16 +14,18 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static int COD_RESPUESTA=0;
+    TextView text2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+            //declaramos el
          final TextView text= (TextView)findViewById(R.id.enlace);
          final Button Mostrar = (Button)findViewById(R.id.mostrar);
-            final TextView text2 = findViewById(R.id.opinion);
+         TextView text2 = findViewById(R.id.opinion);
 
-
+        //pasamos a la segunda actividad
          Mostrar.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
@@ -32,11 +34,7 @@ public class MainActivity extends AppCompatActivity {
              }
          });
 
-
-
-
-
-          text.setOnClickListener(new View.OnClickListener() {
+        text.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View v) {
                   Uri web= Uri.parse("http://hermosaprogramacion.blogspot.com");
@@ -54,12 +52,13 @@ public class MainActivity extends AppCompatActivity {
               }
           });
 
-
-
-
-
-
-
-
 }
+    @Override
+    public void onActivityResult(int cod_resp, int cod_result,Intent intent) {
+        super.onActivityResult(cod_resp, cod_result, intent);
+        if (cod_result == RESULT_OK) {
+            Bundle otroBundle = intent.getExtras();
+            text2.setText(otroBundle.getString("clave"));
+        }
+    }
 }

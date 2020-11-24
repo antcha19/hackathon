@@ -1,47 +1,30 @@
-package com.example.perro;
+package com.example.perrofinal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class visor extends AppCompatActivity {
-    public String textoselec;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visor);
 
         //declaramos el radiogrupo
-       final   RadioGroup Rgrupo=(RadioGroup)findViewById(R.id.radiogrupo);
+        final RadioGroup Rgrupo=(RadioGroup)findViewById(R.id.radiogrupo);
         final   Button boton = (Button)findViewById(R.id.button);
         final TextView texto = (TextView)findViewById(R.id.textView);
-       final   String[] textoselecionado={""};
-
-
-    /*     Rgrupo.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-             @Override
-             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                 if(group.getCheckedRadioButtonId()== R.id.radio_hermoso){
-                     textoselec = "hermoso";
-                 }
-                 if (group.getCheckedRadioButtonId()==R.id.radio_horroroso){
-                     textoselec="horroroso";
-                 }
-                 if (group.getCheckedRadioButtonId()==R.id.radio_lindo){
-                     textoselec="lindo";
-                 }
-                 if (group.getCheckedRadioButtonId()==R.id.radio_normal){
-                     textoselec="normal";
-                 }
-                 texto.setText(textoselec);
-             }
-         });*/
+        final   String[] textoselecionado={""};
 
         Rgrupo.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -70,16 +53,16 @@ public class visor extends AppCompatActivity {
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent databack = new Intent();
-                Bundle sending = new Bundle();
-                sending.putString("respuesta", textoselecionado[0]);
-                databack.putExtras(sending);
-                setResult(RESULT_OK,databack);
+                Intent miintent = new Intent();
+                Bundle mibBundle = new Bundle();
+                mibBundle.putString("respuesta", textoselecionado[0]);
+                miintent.putExtras(mibBundle);
+                setResult(RESULT_OK,miintent);
                 finish();
 
             }
         });
+
+
     }
-
-
 }
