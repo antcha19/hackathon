@@ -3,17 +3,21 @@ package com.example.calculadoragrilayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.BreakIterator;
+
 public class MainActivity extends AppCompatActivity {
 
+    private String resultado="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView resul = (TextView)findViewById(R.id.resultado);
+        final TextView resul = (TextView)findViewById(R.id.resultadotext);
 
         final Button bcero = (Button)findViewById(R.id.cero);
         final Button buno = (Button)findViewById(R.id.uno);
@@ -31,8 +35,101 @@ public class MainActivity extends AppCompatActivity {
         final Button bdivision = (Button)findViewById(R.id.division);
         final Button bpunto = (Button)findViewById(R.id.punto);
         final Button bborrar = (Button)findViewById(R.id.borrar);
+        final Button bc = (Button)findViewById(R.id.C);
+        final Button bigual =(Button)findViewById(R.id.igual);
 
 
+
+        bcero.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultado =resultado + "0";
+                resul.setText(resultado);
+            }
+        });
+
+        buno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultado =resultado + "1";
+                resul.setText(resultado);
+            }
+        });
+        bdos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultado =resultado + "2";
+                resul.setText(resultado);
+            }
+        });
+        btres.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultado =resultado + "3";
+                resul.setText(resultado);
+            }
+        });
+        bcuatro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultado =resultado + "4";
+                resul.setText(resultado);
+            }
+        });
+        bcinco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultado =resultado + "5";
+                resul.setText(resultado);
+            }
+        });
+        bseis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultado =resultado + "6";
+                resul.setText(resultado);
+            }
+        });
+        bsiete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultado =resultado + "7";
+                resul.setText(resultado);
+            }
+        });
+        bocho.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultado =resultado + "8";
+                resul.setText(resultado);
+            }
+        });
+        bnueve.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultado =resultado + "9";
+                resul.setText(resultado);
+            }
+        });
+
+        bsuma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                resul.setText("");
+              
+               resultado = "";
+
+
+            }
+        });
+        bigual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                resul.setText(resultado);
+            }
+        });
 
 
     }
