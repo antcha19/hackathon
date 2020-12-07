@@ -12,6 +12,8 @@ import java.text.BreakIterator;
 public class MainActivity extends AppCompatActivity {
 
     private String resultado="";
+    private int total=0;
+    private int total1=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,17 +110,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 resultado =resultado + "9";
-                resul.setText(resultado);
             }
         });
 
         bsuma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                resul.setText("");
-              
-               resultado = "";
 
 
             }
@@ -127,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                resul.setText(resultado);
+                resul.setText(total1);
             }
         });
 
