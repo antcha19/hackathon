@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 /**
@@ -27,7 +28,7 @@ public class CountFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    //declaro
+    //declaracion mia
     private Button boton;
     private EditText edit;
     private TextView text;
@@ -70,10 +71,22 @@ public class CountFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_count, container, false);
 
+        //Nuevos parametros para el view del fragmento
+        RelativeLayout.LayoutParams params =    new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.MATCH_PARENT,
+                RelativeLayout.LayoutParams.MATCH_PARENT);
+        //Nueva Regla: EL fragmento estara debajo del ID del contenedor
+        params.addRule(RelativeLayout.BELOW, R.id.contenedor);
+        //Margenes: top:41dp
+        params.setMargins(0,41,0,0);
+        //Setear los parametros al view
+        view.setLayoutParams(params);
+
 
         boton = (Button)view.findViewById(R.id.main_button);
         edit = (EditText)view.findViewById(R.id.main_editText);
         text = (TextView)view.findViewById(R.id.main_textview);
+
 
         boton.setOnClickListener( new View.OnClickListener() {
 
