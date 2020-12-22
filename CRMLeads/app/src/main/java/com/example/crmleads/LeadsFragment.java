@@ -73,7 +73,7 @@ public class LeadsFragment extends Fragment {
         mLeadsList = (ListView) root.findViewById(R.id.leads_list);
 
 
-        String[] leadsNames = {
+      /*  String[] leadsNames = {
                 "Alexander Pierrot",
                 "Carlos Lopez",
                 "Sara Bonz",
@@ -90,7 +90,18 @@ public class LeadsFragment extends Fragment {
                 getActivity(),
                 android.R.layout.simple_list_item_1,
                 leadsNames);
+        //Vincula la lista con el adaptador
         mLeadsList.setAdapter(mLeadsAdapter);
+
+
+       */
+        // Inicializar el adaptador con la fuente de datos.
+      ArrayAdapter<Lead>  mLeadsAdapter = new LeadsAdapter(getActivity(),
+                LeadsRepository.getInstance().getLeads());
+
+        //Relacionando la lista con el adaptador
+        mLeadsList.setAdapter(mLeadsAdapter);
+
         return  root;
     }
 }

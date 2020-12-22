@@ -6,6 +6,7 @@
     android:layout_alignParentStart="true"
     android:layout_alignParentTop="true"
     android:orientation="vertical"
+    android:background="@android:color/black"
     android:layout_alignParentLeft="true">
 
     <TextView
@@ -16,9 +17,9 @@
         android:layout_marginBottom="14dp"
         android:height="100dp"
         android:textAlignment="textEnd"
-
+        android:textColor="@android:color/holo_red_dark"
         android:textSize="35sp"
-        android:layout_centerHorizontal="false"
+        android:layout_centerHorizontal="true"
         android:gravity="end" />
 
 
@@ -37,20 +38,20 @@
 
     <Button
         android:id="@+id/C"
-        style="@style/AppTheme.BotonCalculadora.Azul"
+        style="@style/AppTheme.BotonOperadores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="C"
         />
     <Button
         android:id="@+id/division"
-        style="@style/AppTheme.BotonCalculadora.Azul"
+        style="@style/AppTheme.BotonOperadores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="/" />
     <Button
         android:id="@+id/multiplicacion"
-        style="@style/AppTheme.BotonCalculadora.Azul"
+        style="@style/AppTheme.BotonOperadores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="*"
@@ -58,22 +59,22 @@
 
     <Button
         android:id="@+id/borrar"
-        style="@style/AppTheme.BotonCalculadora.Rojo"
+        style="@style/AppTheme.BotonOperadores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="B"
+        android:text="Borrar"
         />
 
     <Button
         android:id="@+id/siete"
-        style="@style/AppTheme.BotonCalculadora.Azul"
+        style="@style/AppTheme.BotonCalculadora.morado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="7"
        />
     <Button
         android:id="@+id/ocho"
-        style="@style/AppTheme.BotonCalculadora.Azul"
+        style="@style/AppTheme.BotonCalculadora.morado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="8"
@@ -81,7 +82,7 @@
 
     <Button
         android:id="@+id/nueve"
-        style="@style/AppTheme.BotonCalculadora.Azul"
+        style="@style/AppTheme.BotonCalculadora.morado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="9"
@@ -89,7 +90,7 @@
 
     <Button
         android:id="@+id/resta"
-        style="@style/AppTheme.BotonCalculadora.Rojo"
+        style="@style/AppTheme.BotonOperadores"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -98,7 +99,7 @@
 
     <Button
         android:id="@+id/cuatro"
-        style="@style/AppTheme.BotonCalculadora.Azul"
+        style="@style/AppTheme.BotonCalculadora.morado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="4"
@@ -106,7 +107,7 @@
 
     <Button
         android:id="@+id/cinco"
-        style="@style/AppTheme.BotonCalculadora.Azul"
+        style="@style/AppTheme.BotonCalculadora.morado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="5"
@@ -114,7 +115,7 @@
 
     <Button
         android:id="@+id/seis"
-        style="@style/AppTheme.BotonCalculadora.Azul"
+        style="@style/AppTheme.BotonCalculadora.morado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="6"
@@ -122,7 +123,7 @@
 
     <Button
         android:id="@+id/suma"
-        style="@style/AppTheme.BotonCalculadora.Rojo"
+        style="@style/AppTheme.BotonOperadores"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -131,7 +132,7 @@
 
     <Button
         android:id="@+id/uno"
-        style="@style/AppTheme.BotonCalculadora.Azul"
+        style="@style/AppTheme.BotonCalculadora.morado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="fill_horizontal"
@@ -139,14 +140,14 @@
         />
     <Button
         android:id="@+id/dos"
-        style="@style/AppTheme.BotonCalculadora.Azul"
+        style="@style/AppTheme.BotonCalculadora.morado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="2"
        />
     <Button
         android:id="@+id/tres"
-        style="@style/AppTheme.BotonCalculadora.Azul"
+        style="@style/AppTheme.BotonCalculadora.morado"
         android:layout_gravity="fill_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -154,15 +155,16 @@
         />
     <Button
         android:id="@+id/igual"
-        style="@style/AppTheme.BotonCalculadora.Rojo"
+        style="@style/AppTheme.BotonOperadores"
         android:layout_gravity="fill_vertical"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="="
         android:layout_rowSpan="2"/>
     <Button
         android:id="@+id/cero"
-        style="@style/AppTheme.BotonCalculadora.Rojo"
+        style="@style/AppTheme.BotonCalculadora.morado"
         android:layout_gravity="fill_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -171,7 +173,7 @@
         />
     <Button
         android:id="@+id/punto"
-        style="@style/AppTheme.BotonCalculadora.Rojo"
+        style="@style/AppTheme.BotonOperadores"
         android:layout_gravity="fill_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

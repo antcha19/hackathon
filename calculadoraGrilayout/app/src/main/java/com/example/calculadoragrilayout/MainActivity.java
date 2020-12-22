@@ -11,9 +11,12 @@ import java.text.BreakIterator;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String resultado="";
-    private int total=0;
-    private int total1=0;
+    private boolean punto = false;
+    private boolean entra = true;
+    private double resultado=0;
+    private int numero1=0;
+    private int numero2=0;
+    private String guarda,guarda2,operacion="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,91 +43,201 @@ public class MainActivity extends AppCompatActivity {
         final Button bc = (Button)findViewById(R.id.C);
         final Button bigual =(Button)findViewById(R.id.igual);
 
-
+        
 
         bcero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultado =resultado + "0";
-                resul.setText(resultado);
+                guarda =resul.getText().toString();
+                guarda = guarda +"0";
+                resul.setText(guarda);
             }
         });
 
         buno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultado =resultado + "1";
-                resul.setText(resultado);
+                guarda =resul.getText().toString();
+                guarda = guarda +"1";
+                resul.setText(guarda);
             }
         });
         bdos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultado =resultado + "2";
-                resul.setText(resultado);
+                guarda =resul.getText().toString();
+                guarda = guarda +"2";
+                resul.setText(guarda);
             }
         });
         btres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultado =resultado + "3";
-                resul.setText(resultado);
+                guarda =resul.getText().toString();
+                guarda = guarda +"3";
+                resul.setText(guarda);
             }
         });
         bcuatro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultado =resultado + "4";
-                resul.setText(resultado);
+                guarda =resul.getText().toString();
+                guarda = guarda +"4";
+                resul.setText(guarda);
             }
         });
         bcinco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultado =resultado + "5";
-                resul.setText(resultado);
+                guarda =resul.getText().toString();
+                guarda = guarda +"5";
+                resul.setText(guarda);
             }
         });
         bseis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultado =resultado + "6";
-                resul.setText(resultado);
+                guarda =resul.getText().toString();
+                guarda = guarda +"6";
+                resul.setText(guarda);
             }
         });
         bsiete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultado =resultado + "7";
-                resul.setText(resultado);
+                guarda =resul.getText().toString();
+                guarda = guarda +"7";
+                resul.setText(guarda);
             }
         });
         bocho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultado =resultado + "8";
-                resul.setText(resultado);
+                guarda =resul.getText().toString();
+                guarda = guarda +"8";
+                resul.setText(guarda);
             }
         });
+
+
+
         bnueve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resultado =resultado + "9";
+                guarda =resul.getText().toString();
+                guarda = guarda +"9";
+                resul.setText(guarda);
             }
         });
-
+    //multipliacion
+        bmultiplicacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+             guarda2 = resul.getText().toString();
+             operacion = "*";
+             //vacio el resultado
+             resul.setText("");
+            }
+        });
         bsuma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
+                guarda2 = resul.getText().toString();
+                operacion = "+";
+                //vacio el resultado
+                resul.setText("");
             }
         });
+
+        bresta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                guarda2 = resul.getText().toString();
+                operacion = "-";
+                //vacio el resultado
+                resul.setText("");
+            }
+        });
+        bdivision.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                guarda2 = resul.getText().toString();
+                operacion = "/";
+                //vacio el resultado
+                resul.setText("");
+            }
+        });
+
+        //punto
+        bpunto.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+
+                guarda = resul.getText().toString();
+                if (guarda.length()<=0){
+                    entra=false;
+                }
+                if(punto==false&&entra==true){
+                    guarda = resul.getText().toString();
+                    guarda = guarda + ".";
+                    resul.setText(guarda);
+                    punto=true;
+                }
+                entra=true;
+            }
+        });
+
+
+
+        //borrar todo
+        bc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                guarda = "";
+                resul.setText(guarda);
+                guarda2 ="";
+                operacion="";
+            }
+        });
+
+        //Borrar solo uno
+        bborrar.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                guarda = resul.getText().toString();
+
+                char ultimo = guarda.charAt(guarda.length()-1);
+                String compara = String.valueOf(ultimo);
+                if (compara.equals(".")) {
+                    punto=false;
+                }
+                guarda = guarda.substring(0,guarda.length()-1);
+                resul.setText(guarda);
+            }
+        });
+
         bigual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                guarda= resul.getText().toString();
 
-                resul.setText(total1);
+                punto = false;
+
+                if(operacion.equals("+")){
+                        resultado = Double.parseDouble(guarda2)+ Double.parseDouble(resul.getText().toString());
+                        resul.setText(String.valueOf(resultado));
+                }
+                if(operacion.equals("-")){
+                    resultado = Double.parseDouble(guarda2)- Double.parseDouble(resul.getText().toString());
+                    resul.setText(String.valueOf(resultado));
+                }
+                if(operacion.equals("*")){
+                    resultado = Double.parseDouble(guarda2)*Double.parseDouble(resul.getText().toString());
+                    resul.setText(String.valueOf(resultado));
+                }
+                if(operacion.equals("/")){
+                    resultado = Double.parseDouble(guarda2)/ Double.parseDouble(resul.getText().toString());
+                    resul.setText(String.valueOf(resultado));
+                }
+
             }
         });
 
