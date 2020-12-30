@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    android:orientation="vertical"
+    android:background="@android:color/black"
+    android:layout_alignParentLeft="true">
+
+    <TextView
+        android:id="@+id/resultadotext"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/grid"
+        android:layout_marginBottom="14dp"
+        android:height="100dp"
+        android:textAlignment="textEnd"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="35sp"
+        android:layout_centerHorizontal="true"
+        android:gravity="end" />
+
+
+    <GridLayout
+        android:id="@+id/grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:columnCount="4"
+        android:padding="0dp"
+        android:rowCount="4"
+        android:layout_alignParentLeft="true">
+
+        <Button
+            android:id="@+id/C"
+            style="@style/AppTheme.BotonOperadores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C"
+            />
+        <Button
+            android:id="@+id/division"
+            style="@style/AppTheme.BotonOperadores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/" />
+        <Button
+            android:id="@+id/multiplicacion"
+            style="@style/AppTheme.BotonOperadores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*"
+            />
+
+        <Button
+            android:id="@+id/borrar"
+            style="@style/AppTheme.BotonOperadores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Borrar"
+            />
+
+        <Button
+            android:id="@+id/siete"
+            style="@style/AppTheme.BotonCalculadora.morado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7"
+            />
+        <Button
+            android:id="@+id/ocho"
+            style="@style/AppTheme.BotonCalculadora.morado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8"
+            />
+
+        <Button
+            android:id="@+id/nueve"
+            style="@style/AppTheme.BotonCalculadora.morado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9"
+            />
+
+        <Button
+            android:id="@+id/resta"
+            style="@style/AppTheme.BotonOperadores"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            />
+
+        <Button
+            android:id="@+id/cuatro"
+            style="@style/AppTheme.BotonCalculadora.morado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4"
+            />
+
+        <Button
+            android:id="@+id/cinco"
+            style="@style/AppTheme.BotonCalculadora.morado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            />
+
+        <Button
+            android:id="@+id/seis"
+            style="@style/AppTheme.BotonCalculadora.morado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6"
+            />
+
+        <Button
+            android:id="@+id/suma"
+            style="@style/AppTheme.BotonOperadores"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            />
+
+        <Button
+            android:id="@+id/uno"
+            style="@style/AppTheme.BotonCalculadora.morado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:text="1"
+            />
+        <Button
+            android:id="@+id/dos"
+            style="@style/AppTheme.BotonCalculadora.morado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            />
+        <Button
+            android:id="@+id/tres"
+            style="@style/AppTheme.BotonCalculadora.morado"
+            android:layout_gravity="fill_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3"
+            />
+        <Button
+            android:id="@+id/igual"
+            style="@style/AppTheme.BotonOperadores"
+            android:layout_gravity="fill_vertical"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:layout_rowSpan="2"/>
+        <Button
+            android:id="@+id/cero"
+            style="@style/AppTheme.BotonCalculadora.morado"
+            android:layout_gravity="fill_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_columnSpan="2"
+            />
+        <Button
+            android:id="@+id/punto"
+            style="@style/AppTheme.BotonOperadores"
+            android:layout_gravity="fill_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="."
+
+            />
+    </GridLayout>
+
+</RelativeLayout>
