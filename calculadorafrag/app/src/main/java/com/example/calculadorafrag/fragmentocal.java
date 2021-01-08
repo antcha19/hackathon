@@ -26,6 +26,7 @@ public class fragmentocal extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    //variables mias
     private boolean punto = false;
     private boolean entra = true;
     private double resultado=0;
@@ -68,8 +69,8 @@ public class fragmentocal extends Fragment {
         // Inflate the layout for this fragment
        View view  = inflater.inflate(R.layout.fragment_fragmentocal, container, false);
 
+        //declaro todos los botonoes y el resultado
             final TextView resul = (TextView)view.findViewById(R.id.resultadotext);
-
             final Button bcero = (Button)view.findViewById(R.id.cero);
             final Button buno = (Button)view.findViewById(R.id.uno);
             final Button bdos = (Button)view.findViewById(R.id.dos);
@@ -242,6 +243,7 @@ public class fragmentocal extends Fragment {
                     resul.setText(guarda);
                     guarda2 ="";
                     operacion="";
+                    punto = false;
                 }
             });
 

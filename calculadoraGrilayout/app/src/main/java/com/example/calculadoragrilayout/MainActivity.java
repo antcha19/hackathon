@@ -11,19 +11,18 @@ import java.text.BreakIterator;
 
 public class MainActivity extends AppCompatActivity {
 
+    //variables
     private boolean punto = false;
     private boolean entra = true;
     private double resultado=0;
-    private int numero1=0;
-    private int numero2=0;
     private String guarda,guarda2,operacion="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //declaro todos los botonoes y el resultado
         final TextView resul = (TextView)findViewById(R.id.resultadotext);
-
         final Button bcero = (Button)findViewById(R.id.cero);
         final Button buno = (Button)findViewById(R.id.uno);
         final Button bdos = (Button)findViewById(R.id.dos);
@@ -44,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         final Button bigual =(Button)findViewById(R.id.igual);
 
         
-
+        //codigo boton =0
         bcero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //codigo boton =1
         buno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 resul.setText(guarda);
             }
         });
+        //codigo boton =2
         bdos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 resul.setText(guarda);
             }
         });
+        //codigo boton =3
         btres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 resul.setText(guarda);
             }
         });
+        //codigo boton =4
         bcuatro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 resul.setText(guarda);
             }
         });
+        //codigo boton =5
         bcinco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 resul.setText(guarda);
             }
         });
+        //codigo boton =6
         bseis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 resul.setText(guarda);
             }
         });
+        //codigo boton =7
         bsiete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 resul.setText(guarda);
             }
         });
+        //codigo boton =8
         bocho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,9 +125,7 @@ public class MainActivity extends AppCompatActivity {
                 resul.setText(guarda);
             }
         });
-
-
-
+        //codigo boton =9
         bnueve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -139,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
              resul.setText("");
             }
         });
+        //suma
         bsuma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -148,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
                 resul.setText("");
             }
         });
-
+    //resta
         bresta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -158,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
                 resul.setText("");
             }
         });
+        //division
         bdivision.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -196,6 +203,7 @@ public class MainActivity extends AppCompatActivity {
                 resul.setText(guarda);
                 guarda2 ="";
                 operacion="";
+                punto = false;
             }
         });
 

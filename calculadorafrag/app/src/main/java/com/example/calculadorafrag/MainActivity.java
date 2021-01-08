@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
                //Paso 4: Confirmar el cambio
                transaction.commit();
 
+
+
             /*    //forma dinamica
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
