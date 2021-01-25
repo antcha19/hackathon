@@ -1,8 +1,10 @@
-package com.example.matriculacion;
+package com.example.matriculacion.asignatura;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.matriculacion.R;
 
 public class asignatura extends AppCompatActivity {
 

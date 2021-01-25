@@ -1,4 +1,4 @@
-package com.example.matriculacion;
+package com.example.matriculacion.alumno;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.matriculacion.R;
 
 public class alumno extends AppCompatActivity {
 
