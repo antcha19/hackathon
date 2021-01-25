@@ -9,6 +9,8 @@ import android.os.Bundle;
 import androidx.fragment.app.DialogFragment;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.widget.TextView;
+
 import com.example.dialogos.DialogFragment.OnSimpleDialogListener;
 
 /**
@@ -34,6 +36,8 @@ public class SimpleDialogFrag extends DialogFragment {
      */
     public AlertDialog createSimpleDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+
 
         builder.setTitle("Titulo")
                 .setMessage("El Mensaje para el usuario")
