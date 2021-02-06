@@ -2,7 +2,9 @@ package com.example.matriculacion.data;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
 import androidx.room.*;
+import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -24,12 +26,31 @@ public abstract class Lista_asignaturaDatabase  extends RoomDatabase{
                     INSTANCE= Room.databaseBuilder(
                             context.getApplicationContext(), Lista_asignaturaDatabase.class,
                             DATABASE_NAME)
+                            .addCallback(mRoomCallBack)
                             .build();
                 }
             }
         }
         return INSTANCE;
     }
+
+    // prepoblar bbdd con callback
+    private static final RoomDatabase.Callback mRoomCallBack = new Callback() {
+        @Override
+        public void onCreate(@NonNull SupportSQLiteDatabase db) {
+            super.onCreate(db);
+
+            dbExecutor.execute(()->{
+                Lista_asignaturaDao dao = INSTANCE.lista_asignaturaDao();
+                Lista_asignatura list1 = new Lista_asignatura("1","matematicas");
+                Lista_asignatura list2 = new Lista_asignatura("2","programacion");
+
+                dao.insert(list1);
+                dao.insert(list2);
+            });
+        }
+    } ;
+
 
 
 }
