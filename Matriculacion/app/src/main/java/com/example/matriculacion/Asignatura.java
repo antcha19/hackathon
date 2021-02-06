@@ -30,7 +30,7 @@ public class Asignatura extends AppCompatActivity {
         mViewModel.getMlista_asignaturas().observe(this, (List<Lista_asignatura> lista_asignaturas) -> {
             StringBuilder sb= new StringBuilder();
             for (Lista_asignatura list : lista_asignaturas){
-                sb.append(list.getId()).append("\n");
+                sb.append(list.getName()).append("\n");
             }
             dbText.setText(sb.toString());
         }

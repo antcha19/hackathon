@@ -43,10 +43,10 @@ public abstract class Lista_asignaturaDatabase  extends RoomDatabase{
             dbExecutor.execute(()->{
                 Lista_asignaturaDao dao = INSTANCE.lista_asignaturaDao();
                 Lista_asignatura list1 = new Lista_asignatura("1","matematicas");
-                Lista_asignatura list2 = new Lista_asignatura("2","programacion");
+         //       Lista_asignatura list2 = new Lista_asignatura("2","programacion");
 
                 dao.insert(list1);
-                dao.insert(list2);
+         //       dao.insert(list2);
             });
         }
     } ;
