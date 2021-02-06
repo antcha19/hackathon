@@ -2,39 +2,37 @@ package com.example.matriculacion;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.room.Entity;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.example.matriculacion.data.Lista_asignatura;
-import com.example.matriculacion.editlista.Lista_asignaturaViewModel;
-
-import java.util.List;
+import com.example.matriculacion.data.ListaAsignatura;
+import com.example.matriculacion.editlista.ListaAsignaturaViewModel;
 
 public class Asignatura extends AppCompatActivity {
 
-    private Lista_asignaturaViewModel mViewModel;
+private ListaAsignaturaViewModel mviewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_asignatura);
 
-        TextView dbText = findViewById(R.id.db_text);
+        TextView dbasig = findViewById(R.id.db_text);
 
-        ViewModelProvider.AndroidViewModelFactory factory=
+        ViewModelProvider.AndroidViewModelFactory factory =
                 ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication());
 
-        mViewModel = new ViewModelProvider(this,factory).get(Lista_asignaturaViewModel.class);
+        mviewModel = new ViewModelProvider(this, factory)
+                .get(ListaAsignaturaViewModel.class);
 
-        mViewModel.getMlista_asignaturas().observe(this, (List<Lista_asignatura> lista_asignaturas) -> {
-            StringBuilder sb= new StringBuilder();
-            for (Lista_asignatura list : lista_asignaturas){
-                sb.append(list.getName()).append("\n");
+        mviewModel.getListaAsignaturas().observe(this,listaAsignaturas -> {
+            StringBuilder sb =  new StringBuilder();
+            for (ListaAsignatura list : listaAsignaturas){
+                sb.append(list.getCodigo()).append("  ");
+                sb.append(list.getNombre()).append("\n");
             }
-            dbText.setText(sb.toString());
-        }
-        );
+            dbasig.setText(sb.toString());
+        });
     }
     
 }

@@ -9,13 +9,10 @@ import androidx.room.Query;
 import java.util.List;
 
 @Dao
-public interface Lista_asignaturaDao {
-
-    @Query("SELECT * FROM  lista_asignatura")
-    LiveData<List<Lista_asignatura>> getAll();
+public interface ListaAsignaturaDao {
+    @Query("SELECT * FROM lista_asignatura")
+    LiveData<List<ListaAsignatura>> getAll();
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    //posible error en lista_asignatura
-    void insert(Lista_asignatura lista_asignatura);
+    void insert(ListaAsignatura listaAsignatura);
 }
-
