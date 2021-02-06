@@ -1,21 +1,14 @@
-package com.example.matriculacion.alumno;
+package com.example.matriculacion;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
-import com.example.matriculacion.R;
-
-public class alumno extends AppCompatActivity {
+public class Alumno extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alumno);
-
-
     }
 }

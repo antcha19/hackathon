@@ -8,9 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".alumno.alumno"></activity>
-        <activity android:name=".asignatura.asignatura" />
+        android:theme="@style/Theme.Matriculacion">
+        <activity android:name=".Alumno"></activity>
+        <activity android:name=".Asignatura" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

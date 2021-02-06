@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".addshoppinglistactivity.AddShoppingListActivity"></activity>
+        <activity android:name=".editShoppingListActivity.EditShoppingListActivity"></activity>
+        <activity android:name=".addshoppinglistactivity.AddShoppingListActivity" />
         <activity android:name=".shoppinglist.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

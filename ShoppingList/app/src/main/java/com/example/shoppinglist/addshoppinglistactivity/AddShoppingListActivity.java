@@ -7,10 +7,13 @@ import android.os.Bundle;
 import android.widget.EditText;
 
 import com.example.shoppinglist.R;
-import com.example.shoppinglist.ShoppingList;
+import com.example.shoppinglist.data.ShoppingList;
+import com.example.shoppinglist.data.ShoppingListInsert;
 import com.example.shoppinglist.shoppinglist.ShoppingListViewModel;
 
 import java.util.UUID;
+
+
 
 public class AddShoppingListActivity extends AppCompatActivity {
 
@@ -43,7 +46,7 @@ public class AddShoppingListActivity extends AppCompatActivity {
 
                     // Crear entidad y guardarla
                     String id = UUID.randomUUID().toString();
-                    ShoppingList shoppingList = new ShoppingList(id, name);
+                    ShoppingListInsert shoppingList = new ShoppingListInsert(id, name);
                     vm.insert(shoppingList);
 
                     // Ir a la lista

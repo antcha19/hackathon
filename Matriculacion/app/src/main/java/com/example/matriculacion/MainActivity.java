@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.matriculacion.asignatura.asignatura;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -16,23 +14,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         //ir a la actividad asignatura
-        Button asig = (Button) findViewById(R.id.idasignatura);
+        Button asig = (Button) findViewById(R.id.Asignaturas);
         asig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent (v.getContext(), asignatura.class);
+                Intent intent2 = new Intent (v.getContext(),Asignatura.class);
                 startActivityForResult(intent2, 0);
             }
         });
 
-        Button alumno=(Button) findViewById(R.id.idalumnos);
+        Button alumno=(Button) findViewById(R.id.Alumnos);
         alumno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentalu = new Intent (v.getContext(), com.example.matriculacion.alumno.alumno.class);
+                Intent intentalu = new Intent (v.getContext(), Alumno.class);
                 startActivityForResult(intentalu, 0);
             }
         });
+
     }
 }
