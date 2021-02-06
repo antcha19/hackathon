@@ -1,5 +1,4 @@
-package com.example.dialogos;
-
+package com.example.matriculacion.Dialogo;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -11,7 +10,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.widget.TextView;
 
-import com.example.dialogos.DialogFragment.OnSimpleDialogListener;
 
 /**
  * Fragmento con diálogo básico
@@ -37,13 +35,14 @@ public class SimpleDialogFrag extends DialogFragment {
     public AlertDialog createSimpleDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-        builder.setTitle("Titulo")
-                .setMessage("El Mensaje para el usuario")
+        builder.setTitle("Instroduce Asignatura")
+
+                .setMessage("Introduzce agian")
                 .setPositiveButton("OK",
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                               //PASO5.-
+                                //PASO5.-
                                 listener.onPossitiveButtonClick();
                             }
                         })

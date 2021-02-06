@@ -17,6 +17,7 @@ private ListaAsignaturaViewModel mviewModel;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_asignatura);
 
+        
         TextView dbasig = findViewById(R.id.db_text);
 
         ViewModelProvider.AndroidViewModelFactory factory =
