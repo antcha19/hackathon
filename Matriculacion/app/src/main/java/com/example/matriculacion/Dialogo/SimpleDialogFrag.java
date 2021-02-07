@@ -8,7 +8,10 @@ import android.os.Bundle;
 import androidx.fragment.app.DialogFragment;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.matriculacion.R;
 
 
 /**
@@ -16,6 +19,7 @@ import android.widget.TextView;
  */
 public class SimpleDialogFrag extends DialogFragment {
 
+    private EditText mEditText;
     //  PASO 2.- Declarar un atributo del tipo de la interfaz para conseguir la instancia directa de la actividad.
     //  Interfaz de comunicación
     OnSimpleDialogListener listener;
@@ -36,7 +40,6 @@ public class SimpleDialogFrag extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         builder.setTitle("Instroduce Asignatura")
-
                 .setMessage("Introduzce agian")
                 .setPositiveButton("OK",
                         new DialogInterface.OnClickListener() {
@@ -44,6 +47,7 @@ public class SimpleDialogFrag extends DialogFragment {
                             public void onClick(DialogInterface dialog, int which) {
                                 //PASO5.-
                                 listener.onPossitiveButtonClick();
+
                             }
                         })
                 .setNegativeButton("CANCELAR",
@@ -53,7 +57,6 @@ public class SimpleDialogFrag extends DialogFragment {
                                 listener.onNegativeButtonClick();
                             }
                         });
-
         return builder.create();
     }
 
