@@ -9,6 +9,7 @@ import androidx.fragment.app.DialogFragment;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.matriculacion.R;
@@ -39,9 +40,17 @@ public class SimpleDialogFrag extends DialogFragment {
     public AlertDialog createSimpleDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-        builder.setTitle("Instroduce Asignatura")
-                .setMessage("Introduzce agian")
-                .setPositiveButton("OK",
+        LinearLayout layout = new LinearLayout(getActivity());
+        layout.setOrientation(LinearLayout.VERTICAL);
+        builder.setTitle("Introduce Asignatura");
+        final EditText codigo = new EditText(getActivity());
+        codigo.setHint("codigo");
+        layout.addView(codigo);
+        final EditText Asignatura = new EditText(getActivity());
+        Asignatura.setHint("Asignatura");
+        layout.addView(Asignatura);
+        builder.setView(layout);
+        builder.setPositiveButton("Guardar",
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -49,8 +58,8 @@ public class SimpleDialogFrag extends DialogFragment {
                                 listener.onPossitiveButtonClick();
 
                             }
-                        })
-                .setNegativeButton("CANCELAR",
+                        });
+                builder.setNegativeButton("CANCELAR",
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
