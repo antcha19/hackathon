@@ -2,13 +2,11 @@ package com.example.matriculacion.Dialogo;
 
 import android.app.Activity;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.matriculacion.R;
 
@@ -72,11 +70,13 @@ public class DialogFragment extends Fragment {
     }
 
 
-    // PASO1.-La declaración de la interfaz debe tener definido un método por cada acción que reciba el diálogo
+    // escucha los botonos de asignatura
     public interface OnSimpleDialogListener {
         void onPossitiveButtonClick();// Eventos Botón Positivo
         void onNegativeButtonClick();// Eventos Botón Negativo
     }
+
+
 
     //Paso #3: Comprobar que la actividad ha implementado la interfaz podemos usar el método onAttach().
     public void onAttach(Activity activity) {
@@ -84,6 +84,7 @@ public class DialogFragment extends Fragment {
 
         try {
             listener = (OnSimpleDialogListener) activity;
+
 
         } catch (ClassCastException e) {
             throw new ClassCastException(

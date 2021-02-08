@@ -1,23 +1,19 @@
 package com.example.matriculacion;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.matriculacion.Dialogo.SimpleDialogFrag;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
+import androidx.lifecycle.ViewModelProvider;
+
+
+import com.example.matriculacion.Dialogo.SimpleDialogFrag2;
 import com.example.matriculacion.data.ListaAlumno;
 import com.example.matriculacion.editlista.ListaAlumnoViewModel;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.DialogFragment;
-
-public class Alumno extends AppCompatActivity  implements  SimpleDialogFrag.OnSimpleDialogListener{
+public class Alumno extends AppCompatActivity  implements  SimpleDialogFrag2.OnSimpleDialogListener{
 
     private ListaAlumnoViewModel mViewModel;
     @Override
@@ -37,7 +33,7 @@ public class Alumno extends AppCompatActivity  implements  SimpleDialogFrag.OnSi
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment simpleDialog = new SimpleDialogFrag();
+                DialogFragment simpleDialog = new SimpleDialogFrag2();
                 simpleDialog.show(getSupportFragmentManager(),"prueba");
             }
         });
@@ -56,7 +52,7 @@ public class Alumno extends AppCompatActivity  implements  SimpleDialogFrag.OnSi
 
     @Override
     public void onPossitiveButtonClick() {
-        
+
     }
 
     @Override

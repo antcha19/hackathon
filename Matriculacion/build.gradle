@@ -26,6 +26,7 @@ task clean(type: Delete) {
 ext {
     appCompatVersion = '1.2.0'
 
+
     roomVersion = '2.2.5'
     lifecycleVersion = '2.2.0'
 
