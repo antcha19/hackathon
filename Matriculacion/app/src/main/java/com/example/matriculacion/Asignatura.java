@@ -7,6 +7,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.matriculacion.Dialogo.SimpleDialogFrag;
 import com.example.matriculacion.data.ListaAsignatura;
@@ -15,6 +16,9 @@ import com.example.matriculacion.editlista.ListaAsignaturaViewModel;
 public class Asignatura extends AppCompatActivity implements SimpleDialogFrag.OnSimpleDialogListener {
 
 private ListaAsignaturaViewModel mviewModel;
+    private RecyclerView mList;
+    private ListaAdapter mAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +50,18 @@ private ListaAsignaturaViewModel mviewModel;
             }
             dbasig.setText(sb.toString());
         });
+
+        setupList();
+
+      //  setupFab();
     }
 
+
+    private void setupList() {
+        mList = findViewById(R.id.list);
+        mAdapter = new ListaAdapter();
+        mviewModel.getListaAsignaturas().observe(this, mAdapter::setItems);
+    }
     @Override
     public void onPossitiveButtonClick() {
 

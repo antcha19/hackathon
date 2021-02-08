@@ -51,8 +51,8 @@ public class SimpleDialogFrag2 extends DialogFragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //PASO5.-
+                        String DNI = dni.getText().toString();
                         listener.onPossitiveButtonClick();
-
                     }
                 });
         builder.setNegativeButton("CANCELAR",
@@ -62,6 +62,7 @@ public class SimpleDialogFrag2 extends DialogFragment {
                         listener.onNegativeButtonClick();
                     }
                 });
+
         return builder.create();
     }
 
@@ -83,7 +84,8 @@ public class SimpleDialogFrag2 extends DialogFragment {
 
 
 
-    public interface OnSimpleDialogListener ({
+
+    public   interface OnSimpleDialogListener {
         void onPossitiveButtonClick();// Eventos Botón Positivo
         void onNegativeButtonClick();// Eventos Botón Negativo
     }
