@@ -11,28 +11,31 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {ListaAsignatura.class}, version = 1, exportSchema = false)
 
-public  abstract class ListaAsignaturaDatabase extends RoomDatabase {
+@Database(entities = {ListaAsignatura.class,ListaAlumno.class}, version = 1, exportSchema = false)
+
+public  abstract class ListDataBase extends RoomDatabase {
 
     // Exposición de DAOs
-  //  public abstract ListaAsignaturaDao listaAsignaturaDao;
+    //  public abstract ListaAsignaturaDao listaAsignaturaDao;
     public abstract ListaAsignaturaDao listaAsignaturaDao();
+    public abstract ListaAlumnoDao listaAlumnoDao();
 
-    private static final String DATABASE_NAME = "lista-asignatura-db";
+    private static final String DATABASE_NAME = "lista-db";
 
-    private static ListaAsignaturaDatabase INSTANCE;
+    private static ListDataBase INSTANCE;
+
 
     private static final int THREADS = 4;
 
     public static final ExecutorService dbExecutor = Executors.newFixedThreadPool(THREADS);
 
-    public static ListaAsignaturaDatabase getInstance(final Context context) {
+    public static ListDataBase getInstance(final Context context) {
         if (INSTANCE == null) {
-            synchronized (ListaAsignaturaDatabase.class) {
+            synchronized (ListDataBase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(
-                            context.getApplicationContext(), ListaAsignaturaDatabase.class,
+                            context.getApplicationContext(), ListDataBase.class,
                             DATABASE_NAME)
                             .addCallback(mRoomCallback)
                             .build();
@@ -53,6 +56,11 @@ public  abstract class ListaAsignaturaDatabase extends RoomDatabase {
 
                 ListaAsignatura list1 = new ListaAsignatura("1", "Lidgd ejemplo");
                 dao.insert(list1);
+
+                ListaAlumnoDao daoAlumno= INSTANCE.listaAlumnoDao();
+
+                ListaAlumno lista = new ListaAlumno("3434fs","Antonio ","Yepez");
+                daoAlumno.insert(lista);
 
             });
         }

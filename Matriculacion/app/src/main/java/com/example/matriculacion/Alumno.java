@@ -11,11 +11,11 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.matriculacion.Dialogo.SimpleDialogFrag2;
 import com.example.matriculacion.data.ListaAlumno;
-import com.example.matriculacion.editlista.ListaAlumnoViewModel;
+import com.example.matriculacion.editlista.AlumnoViewModel;
 
 public class Alumno extends AppCompatActivity  implements  SimpleDialogFrag2.OnSimpleDialogListener{
 
-    private ListaAlumnoViewModel mViewModel;
+    private AlumnoViewModel mViewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +27,7 @@ public class Alumno extends AppCompatActivity  implements  SimpleDialogFrag2.OnS
         ViewModelProvider.AndroidViewModelFactory factory =
                 ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication());
 
-        mViewModel = new  ViewModelProvider(this, factory).get(ListaAlumnoViewModel.class);
+        mViewModel = new  ViewModelProvider(this, factory).get(AlumnoViewModel.class);
 
         //codigo para que muestro al pulsar el +
         add.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +42,7 @@ public class Alumno extends AppCompatActivity  implements  SimpleDialogFrag2.OnS
             for(ListaAlumno listaAlumno : listaAlumnos){
                 sb.append(listaAlumno.getId()).append("  ");
                 sb.append(listaAlumno.getName()).append(" ");
+                sb.append(listaAlumno.getApellidos()).append(" ");
 
             }
             dbalumno.setText(sb.toString());

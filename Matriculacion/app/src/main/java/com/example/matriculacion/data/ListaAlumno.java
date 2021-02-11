@@ -16,11 +16,15 @@ public class ListaAlumno {
     @NonNull
     @ColumnInfo(name = "name")
     private final String mName;
+    @NonNull
+    @ColumnInfo(name = "apellidos")
+    String mApellidos;
 
 
-    public ListaAlumno(@NonNull String id, @NonNull String name) {
+    public ListaAlumno(@NonNull String id, @NonNull String name, @NonNull String apellidos) {
         mId = id;
         mName = name;
+        mApellidos=apellidos;
     }
 
     public String getId() {
@@ -30,4 +34,6 @@ public class ListaAlumno {
     public String getName() {
         return mName;
     }
+
+    public String getApellidos(){return mApellidos;}
 }

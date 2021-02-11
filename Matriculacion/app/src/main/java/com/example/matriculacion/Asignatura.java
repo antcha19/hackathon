@@ -11,13 +11,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.matriculacion.Dialogo.SimpleDialogFrag;
 import com.example.matriculacion.data.ListaAsignatura;
-import com.example.matriculacion.editlista.ListaAsignaturaViewModel;
+import com.example.matriculacion.editlista.AsignaturaViewModel;
 
 public class Asignatura extends AppCompatActivity implements SimpleDialogFrag.OnSimpleDialogListener {
 
-private ListaAsignaturaViewModel mviewModel;
+private AsignaturaViewModel mviewModel;
     private RecyclerView mList;
-    private ListaAdapter mAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ private ListaAsignaturaViewModel mviewModel;
                 ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication());
 
         mviewModel = new ViewModelProvider(this, factory)
-                .get(ListaAsignaturaViewModel.class);
+                .get(AsignaturaViewModel.class);
 
         //codigo para que muestro al pulsar el +
         addasig.setOnClickListener(new View.OnClickListener() {
@@ -51,17 +51,13 @@ private ListaAsignaturaViewModel mviewModel;
             dbasig.setText(sb.toString());
         });
 
-        setupList();
+
 
       //  setupFab();
     }
 
 
-    private void setupList() {
-        mList = findViewById(R.id.list);
-        mAdapter = new ListaAdapter();
-        mviewModel.getListaAsignaturas().observe(this, mAdapter::setItems);
-    }
+
     @Override
     public void onPossitiveButtonClick() {
 
