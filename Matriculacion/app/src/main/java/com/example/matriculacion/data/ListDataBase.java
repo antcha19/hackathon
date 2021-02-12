@@ -59,8 +59,10 @@ public  abstract class ListDataBase extends RoomDatabase {
 
                 ListaAlumnoDao daoAlumno= INSTANCE.listaAlumnoDao();
 
-                ListaAlumno lista = new ListaAlumno("3434fs","Antonio ","Yepez");
-                daoAlumno.insert(lista);
+                ListaAlumno alumno1 = new ListaAlumno("3434fs","Antonio ","Yepez");
+                ListaAlumno alumno2= new ListaAlumno("3434fs","Antondfgdfio ","Yepedfgdfz");
+                daoAlumno.insert(alumno1);
+                daoAlumno.insert(alumno2);
 
             });
         }

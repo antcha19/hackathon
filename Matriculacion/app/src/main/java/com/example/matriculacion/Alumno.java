@@ -7,15 +7,17 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import androidx.lifecycle.ViewModelProvider;
-
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.matriculacion.Dialogo.SimpleDialogFrag2;
-import com.example.matriculacion.data.ListaAlumno;
 import com.example.matriculacion.editlista.AlumnoViewModel;
+import com.example.matriculacion.editlista.ListAdapter;
 
 public class Alumno extends AppCompatActivity  implements  SimpleDialogFrag2.OnSimpleDialogListener{
 
     private AlumnoViewModel mViewModel;
+    private RecyclerView mList;
+    private ListAdapter mAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +39,7 @@ public class Alumno extends AppCompatActivity  implements  SimpleDialogFrag2.OnS
                 simpleDialog.show(getSupportFragmentManager(),"prueba");
             }
         });
-        mViewModel.getListaAlumnos().observe(this,listaAlumnos -> {
+   /*     mViewModel.getListaAlumnos().observe(this,listaAlumnos -> {
             StringBuilder sb = new StringBuilder();
             for(ListaAlumno listaAlumno : listaAlumnos){
                 sb.append(listaAlumno.getId()).append("  ");
@@ -46,7 +48,8 @@ public class Alumno extends AppCompatActivity  implements  SimpleDialogFrag2.OnS
 
             }
             dbalumno.setText(sb.toString());
-        });
+        });*/
+       setupList();
 
     }
 
@@ -59,5 +62,12 @@ public class Alumno extends AppCompatActivity  implements  SimpleDialogFrag2.OnS
     @Override
     public void onNegativeButtonClick() {
 
+    }
+
+    private void setupList() {
+        mList = findViewById(R.id.list);
+        mAdapter = new ListAdapter();
+        mList.setAdapter(mAdapter);
+        mViewModel.getListaAlumnos().observe(this, mAdapter::setItems);
     }
 }

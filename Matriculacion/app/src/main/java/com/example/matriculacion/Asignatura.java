@@ -10,13 +10,15 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.matriculacion.Dialogo.SimpleDialogFrag;
-import com.example.matriculacion.data.ListaAsignatura;
 import com.example.matriculacion.editlista.AsignaturaViewModel;
+import com.example.matriculacion.editlista.ListAdapterAsig;
 
 public class Asignatura extends AppCompatActivity implements SimpleDialogFrag.OnSimpleDialogListener {
 
 private AsignaturaViewModel mviewModel;
     private RecyclerView mList;
+    private ListAdapterAsig mAdapter;
+
 
 
     @Override
@@ -42,18 +44,18 @@ private AsignaturaViewModel mviewModel;
             }
         });
 
-        mviewModel.getListaAsignaturas().observe(this,listaAsignaturas -> {
+ /*       mviewModel.getListaAsignaturas().observe(this,listaAsignaturas -> {
             StringBuilder sb =  new StringBuilder();
             for (ListaAsignatura list : listaAsignaturas){
                 sb.append(list.getCodigo()).append("  ");
                 sb.append(list.getNombre()).append("\n");
             }
             dbasig.setText(sb.toString());
-        });
+        });*/
+
+        setupList();
 
 
-
-      //  setupFab();
     }
 
 
@@ -67,4 +69,13 @@ private AsignaturaViewModel mviewModel;
     public void onNegativeButtonClick() {
 
     }
+
+    private void setupList() {
+        mList = findViewById(R.id.list);
+        mAdapter = new ListAdapterAsig();
+        mList.setAdapter(mAdapter);
+        mviewModel.getListaAsignaturas().observe(this, mAdapter::setItemsAsig);
+    }
+
+
 }
