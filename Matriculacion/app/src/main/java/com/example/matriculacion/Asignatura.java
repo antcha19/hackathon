@@ -1,15 +1,16 @@
 package com.example.matriculacion;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.matriculacion.Dialogo.SimpleDialogFrag;
+import com.example.matriculacion.add.AnadirAsignatura;
 import com.example.matriculacion.editlista.AsignaturaViewModel;
 import com.example.matriculacion.editlista.ListAdapterAsig;
 
@@ -39,8 +40,13 @@ private AsignaturaViewModel mviewModel;
         addasig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment simple = new SimpleDialogFrag();
-                simple.show(getSupportFragmentManager(),"prueba");
+                //codigo para añadir con el dialogo
+           /*     DialogFragment simple = new SimpleDialogFrag();
+                simple.show(getSupportFragmentManager(),"prueba");*/
+
+                //este lleva a la actividad de añadir
+                Intent intentañadir = new Intent (v.getContext(), AnadirAsignatura.class);
+                startActivityForResult(intentañadir, 0);
             }
         });
 

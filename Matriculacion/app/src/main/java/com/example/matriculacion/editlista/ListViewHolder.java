@@ -23,7 +23,7 @@ public class ListViewHolder extends RecyclerView.ViewHolder {
 
     public void bind(ListaAlumno item) {
 
-        mNameText.setText(item.getName() + item.getApellidos());
+        mNameText.setText(item.getId()+" "+item.getName() +" "+ item.getApellidos());
 
     }
     public void bind2(ListaAsignatura item) {

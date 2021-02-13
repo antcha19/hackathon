@@ -23,7 +23,7 @@ public class ListViewHolderAsig extends RecyclerView.ViewHolder {
 
     public void bind(ListaAsignatura item) {
 
-        mNameText.setText(item.getCodigo() + item.getNombre());
+        mNameText.setText(item.getCodigo() +" "+ item.getNombre());
 
     }
     public static ListViewHolderAsig create(ViewGroup parent) {
