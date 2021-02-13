@@ -12,7 +12,7 @@ import com.example.matriculacion.R;
 import com.example.matriculacion.data.ListaAlumno;
 import com.example.matriculacion.data.ListaAsignatura;
 
-public class ListViewHolder extends RecyclerView.ViewHolder {
+public  class ListViewHolder extends RecyclerView.ViewHolder {
 
     private final TextView mNameText;
 
@@ -26,14 +26,16 @@ public class ListViewHolder extends RecyclerView.ViewHolder {
         mNameText.setText(item.getId()+" "+item.getName() +" "+ item.getApellidos());
 
     }
-    public void bind2(ListaAsignatura item) {
+       public void bind2(ListaAsignatura item) {
 
-        mNameText.setText(item.getNombre());
-    }
+            mNameText.setText( item.getCodigo()+ ""+item.getNombre());
+        }
 
     public static ListViewHolder create(ViewGroup parent) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.shopping_list_item, parent, false);
         return new ListViewHolder(v);
     }
+
+
 }

@@ -14,6 +14,7 @@ public class ListAdapterAsig extends RecyclerView.Adapter<ListViewHolder> {
 
       private List<ListaAsignatura> mListaAsignaturas;
 
+
     @NonNull
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -28,6 +29,7 @@ public class ListAdapterAsig extends RecyclerView.Adapter<ListViewHolder> {
           holder.bind2(itemasig);
     }
 
+
     @Override
     public int getItemCount() {
 
@@ -37,4 +39,6 @@ public class ListAdapterAsig extends RecyclerView.Adapter<ListViewHolder> {
         mListaAsignaturas = items;
         notifyDataSetChanged();
     }
+
+
 }
