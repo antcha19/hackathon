@@ -41,4 +41,13 @@ public class ListRepository {
     public void insertAlumno(ListaAlumno listaAlumno){
         ListDataBase.dbExecutor.execute(()-> mListaAlumnoDao.insert(listaAlumno));
     }
+
+    //funcion para borrar
+    public  void borrarAsignatura(ListaAsignatura listaAsignatura){
+        ListDataBase.dbExecutor.execute(()->mListaAsignaturaDao.deleteAsignatura(listaAsignatura));
+    }
+    public void borrarAlumno(ListaAlumno listaAlumno){
+        ListDataBase.dbExecutor.execute(()-> mListaAlumnoDao.delete(listaAlumno));
+    }
+
 }

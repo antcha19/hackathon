@@ -5,13 +5,17 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.matriculacion.R;
 import com.example.matriculacion.data.ListaAsignatura;
 import com.example.matriculacion.editlista.AsignaturaViewModel;
+import com.example.matriculacion.editlista.ListAdapterAsig;
 
 public class AnadirAsignatura extends AppCompatActivity {
     private AsignaturaViewModel mViewModelAsig;
+    private ListAdapterAsig adaptersig;
+    private RecyclerView recylistaasignatura;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +31,12 @@ public class AnadirAsignatura extends AppCompatActivity {
         mViewModelAsig =  new ViewModelProvider(this, factory).get(AsignaturaViewModel.class);
 
         anadirasignatura(mViewModelAsig);
+        //funcion para borrar pero peta
+      //  setuplist();
+
     }
+
+
 
     private void anadirasignatura(AsignaturaViewModel mViewModelAsig) {
         findViewById(R.id.AñadirAsignatura).setOnClickListener(
@@ -55,6 +64,11 @@ public class AnadirAsignatura extends AppCompatActivity {
         onBackPressed();
         return true;
     }
+
+
+
+
+
 
 
 }

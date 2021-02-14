@@ -21,7 +21,5 @@ public interface ListaAsignaturaDao {
     @Delete(entity = ListaAsignatura.class)
     void deleteAsignatura(ListaAsignatura listaAsignatura);
 
-    //borrar toda la lista
-    @Query("DELETE FROM lista_asignatura")
-    void deleteAllShoppingLists();
+
 }

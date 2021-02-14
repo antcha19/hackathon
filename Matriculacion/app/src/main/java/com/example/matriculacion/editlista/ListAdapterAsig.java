@@ -1,28 +1,37 @@
 package com.example.matriculacion.editlista;
 
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.matriculacion.R;
 import com.example.matriculacion.data.ListaAsignatura;
 
 import java.util.List;
 
-public class ListAdapterAsig extends RecyclerView.Adapter<ListViewHolder> {
+public class ListAdapterAsig extends RecyclerView.Adapter<ListAdapterAsig.ListViewHolderAsig> {
 
 
       private List<ListaAsignatura> mListaAsignaturas;
+    private ItemListener itemListener;
 
 
     @NonNull
     @Override
-    public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return ListViewHolder.create(parent);
+    public ListViewHolderAsig onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new ListViewHolderAsig(
+                LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.list_item_asignatura,parent,false)
+        );
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ListViewHolderAsig holder, int position) {
 
            ListaAsignatura itemasig= mListaAsignaturas.get(position);
 
@@ -38,6 +47,53 @@ public class ListAdapterAsig extends RecyclerView.Adapter<ListViewHolder> {
       public void setItemsAsig(List<ListaAsignatura> items) {
         mListaAsignaturas = items;
         notifyDataSetChanged();
+    }
+    public void setItemListener(ItemListener listener) {
+        itemListener = listener;
+    }
+
+    public interface ItemListener{
+        void onClick(ListaAsignatura listaAsignatura);
+        void onDeleteIconClicked(ListaAsignatura listaAsignatura);
+    }
+    public  class ListViewHolderAsig extends RecyclerView.ViewHolder {
+
+        private final TextView mNameText;
+        private final ImageView botonborrar;
+        private final ImageView botoneditar;
+
+        public ListViewHolderAsig(@NonNull View itemView) {
+            super(itemView);
+            mNameText = itemView.findViewById(R.id.name_asignatura);
+            botonborrar= itemView.findViewById(R.id.itemborrarasig);
+            botoneditar= itemView.findViewById(R.id.itemeditasig);
+
+            botonborrar.setOnClickListener(this::eventosasig);
+        }
+
+        public void eventosasig(View view){
+            if (itemListener!=null){
+                ListaAsignatura clickasig = mListaAsignaturas.get(getAdapterPosition());
+
+                //manejo los eventos del click
+                if (view.getId()== R.id.itemborrarasig){
+                    itemListener.onDeleteIconClicked(clickasig);
+                    return;
+                }
+                itemListener.onClick(clickasig);
+            }
+
+        }
+
+
+        public void bind2(ListaAsignatura item) {
+
+            mNameText.setText( item.getCodigo()+ " "+item.getNombre());
+        }
+
+
+
+
     }
 
 

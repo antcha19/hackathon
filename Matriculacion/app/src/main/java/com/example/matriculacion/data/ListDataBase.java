@@ -38,6 +38,7 @@ public  abstract class ListDataBase extends RoomDatabase {
                             context.getApplicationContext(), ListDataBase.class,
                             DATABASE_NAME)
                             .addCallback(mRoomCallback)
+
                             .build();
                 }
             }
@@ -54,7 +55,7 @@ public  abstract class ListDataBase extends RoomDatabase {
             dbExecutor.execute(() -> {
                 ListaAsignaturaDao dao = INSTANCE.listaAsignaturaDao();
 
-                ListaAsignatura list1 = new ListaAsignatura("1", "Lidgd ejemplo");
+                ListaAsignatura list1 = new ListaAsignatura("1", "matematicas");
                 dao.insert(list1);
 
                 ListaAlumnoDao daoAlumno= INSTANCE.listaAlumnoDao();

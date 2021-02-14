@@ -26,11 +26,13 @@ public class ListaAsignatura {
 
     @NonNull
     public String getCodigo() {
+
         return mCodigo;
     }
 
     @NonNull
     public String getNombre() {
+
         return mNombre;
     }
 }

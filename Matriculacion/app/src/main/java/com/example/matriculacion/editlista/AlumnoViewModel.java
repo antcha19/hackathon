@@ -28,4 +28,9 @@ public class AlumnoViewModel extends AndroidViewModel {
     public void insertAlumno(ListaAlumno listaAlumno){
         listaRepository.insertAlumno(listaAlumno);
     }
+
+    public void deleteAlumno(ListaAlumno listaAlumno){
+//llama a la listrepository
+        listaRepository.borrarAlumno(listaAlumno);
+    }
 }

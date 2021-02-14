@@ -30,4 +30,9 @@ public class AsignaturaViewModel extends AndroidViewModel {
     public void insert(ListaAsignatura listaAsignatura){
         mRepository.insertAsignatura(listaAsignatura);
     }
+
+    //para borrar
+    public void borrarasignatura(ListaAsignatura listaAsignatura){
+        mRepository.borrarAsignatura(listaAsignatura);
+    }
 }

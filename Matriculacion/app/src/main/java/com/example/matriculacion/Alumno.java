@@ -3,7 +3,6 @@ package com.example.matriculacion;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -11,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.matriculacion.Dialogo.SimpleDialogFrag2;
 import com.example.matriculacion.add.AnadirAlumno;
+import com.example.matriculacion.data.ListaAlumno;
 import com.example.matriculacion.editlista.AlumnoViewModel;
 import com.example.matriculacion.editlista.ListAdapter;
 
@@ -25,7 +25,8 @@ public class Alumno extends AppCompatActivity  implements  SimpleDialogFrag2.OnS
         setContentView(R.layout.activity_alumno);
         //variable del "add *"
         View add = findViewById(R.id.floating_action_button);
-        TextView dbalumno = findViewById(R.id.db_Alumno);
+     //   View fecha = findViewById(R.id.itemeditasig);
+//        TextView dbalumno = findViewById(R.id.db_Alumno);
 
         ViewModelProvider.AndroidViewModelFactory factory =
                 ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication());
@@ -45,6 +46,8 @@ public class Alumno extends AppCompatActivity  implements  SimpleDialogFrag2.OnS
                 startActivityForResult(intentañadir, 0);
             }
         });
+
+
 
    /*     mViewModel.getListaAlumnos().observe(this,listaAlumnos -> {
             StringBuilder sb = new StringBuilder();
@@ -75,6 +78,18 @@ public class Alumno extends AppCompatActivity  implements  SimpleDialogFrag2.OnS
         mList = findViewById(R.id.list);
         mAdapter = new ListAdapter();
         mList.setAdapter(mAdapter);
+
+        mAdapter.setItemListenerAlumno(new ListAdapter.ItemListener() {
+            @Override
+            public void onClick(ListaAlumno listaAlumno) {
+
+            }
+            //iconborrar
+            @Override
+            public void onDeleteIconClicked(ListaAlumno listaAlumno) {
+                        mViewModel.deleteAlumno(listaAlumno);
+            }
+        });
         mViewModel.getListaAlumnos().observe(this, mAdapter::setItems);
     }
 }

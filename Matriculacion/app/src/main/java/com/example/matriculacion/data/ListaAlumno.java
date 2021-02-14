@@ -35,5 +35,7 @@ public class ListaAlumno {
         return mName;
     }
 
-    public String getApellidos(){return mApellidos;}
+    public String getApellidos(){
+        return mApellidos;
+    }
 }

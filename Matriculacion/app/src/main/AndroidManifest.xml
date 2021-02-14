@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Matriculacion">
-        <activity android:name=".add.AnadirAsignatura"></activity>
-        <activity android:name=".add.AnadirAlumno" />
+        <activity android:name=".add.AnadirAsignatura" android:label="@string/añadirasignatura"></activity>
+        <activity android:name=".add.AnadirAlumno" android:label="@string/añadiralumno" />
         <activity android:name=".Asig_Alumno" />
-        <activity android:name=".Alumno" />
-        <activity android:name=".Asignatura" />
+        <activity android:name=".Alumno" android:label="@string/Alumno" />
+        <activity android:name=".Asignatura" android:label="@string/Asignaturas"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
