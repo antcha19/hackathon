@@ -8,13 +8,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.matriculacion.Dialogo.SimpleDialogFrag2;
 import com.example.matriculacion.add.AnadirAlumno;
 import com.example.matriculacion.data.ListaAlumno;
 import com.example.matriculacion.editlista.AlumnoViewModel;
 import com.example.matriculacion.editlista.ListAdapter;
 
-public class Alumno extends AppCompatActivity  implements  SimpleDialogFrag2.OnSimpleDialogListener{
+public class Alumno extends AppCompatActivity  {
 
     private AlumnoViewModel mViewModel;
     private RecyclerView mList;
@@ -64,15 +63,7 @@ public class Alumno extends AppCompatActivity  implements  SimpleDialogFrag2.OnS
     }
 
 
-    @Override
-    public void onPossitiveButtonClick() {
 
-    }
-
-    @Override
-    public void onNegativeButtonClick() {
-
-    }
 
     private void setupList() {
         mList = findViewById(R.id.list);
