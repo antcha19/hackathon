@@ -21,7 +21,7 @@ public  abstract class ListDataBase extends RoomDatabase {
     public abstract ListaAsignaturaDao listaAsignaturaDao();
     public abstract ListaAlumnoDao listaAlumnoDao();
 
-    private static final String DATABASE_NAME = "lista-db";
+    private static final String DATABASE_NAME = "lista-db1";
 
     private static ListDataBase INSTANCE;
 
@@ -38,7 +38,7 @@ public  abstract class ListDataBase extends RoomDatabase {
                             context.getApplicationContext(), ListDataBase.class,
                             DATABASE_NAME)
                             .addCallback(mRoomCallback)
-
+                            .fallbackToDestructiveMigration()
                             .build();
                 }
             }

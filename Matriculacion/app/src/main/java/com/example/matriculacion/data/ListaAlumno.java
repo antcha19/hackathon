@@ -11,14 +11,14 @@ public class ListaAlumno {
     @PrimaryKey
     @NonNull
     @ColumnInfo(name = "id")
-    private final String mId;
+    private  String mId;
 
     @NonNull
     @ColumnInfo(name = "name")
-    private final String mName;
+    private  String mName;
     @NonNull
     @ColumnInfo(name = "apellidos")
-    String mApellidos;
+   private String mApellidos;
 
 
     public ListaAlumno(@NonNull String id, @NonNull String name, @NonNull String apellidos) {
@@ -37,5 +37,17 @@ public class ListaAlumno {
 
     public String getApellidos(){
         return mApellidos;
+    }
+
+    public void setmId(@NonNull String mId) {
+        this.mId = mId;
+    }
+
+    public void setmName(@NonNull String mName) {
+        this.mName = mName;
+    }
+
+    public void setmApellidos(@NonNull String mApellidos) {
+        this.mApellidos = mApellidos;
     }
 }

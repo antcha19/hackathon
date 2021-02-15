@@ -5,15 +5,17 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.matriculacion.Dialogo.FragmentAlumno;
 import com.example.matriculacion.add.AnadirAlumno;
 import com.example.matriculacion.data.ListaAlumno;
 import com.example.matriculacion.editlista.AlumnoViewModel;
 import com.example.matriculacion.editlista.ListAdapter;
 
-public class Alumno extends AppCompatActivity  {
+public class Alumno extends AppCompatActivity implements FragmentAlumno.Fragmentupdate {
 
     private AlumnoViewModel mViewModel;
     private RecyclerView mList;
@@ -24,8 +26,7 @@ public class Alumno extends AppCompatActivity  {
         setContentView(R.layout.activity_alumno);
         //variable del "add *"
         View add = findViewById(R.id.floating_action_button);
-     //   View fecha = findViewById(R.id.itemeditasig);
-//        TextView dbalumno = findViewById(R.id.db_Alumno);
+
 
         ViewModelProvider.AndroidViewModelFactory factory =
                 ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication());
@@ -36,9 +37,6 @@ public class Alumno extends AppCompatActivity  {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //este codigo lleva al fragment de añadir
-             /*   DialogFragment simpleDialog = new SimpleDialogFrag2();
-                simpleDialog.show(getSupportFragmentManager(),"prueba");*/
 
                 //este lleva a la actividad de añadir
                 Intent intentañadir = new Intent (v.getContext(), AnadirAlumno.class);
@@ -46,24 +44,9 @@ public class Alumno extends AppCompatActivity  {
             }
         });
 
-
-
-   /*     mViewModel.getListaAlumnos().observe(this,listaAlumnos -> {
-            StringBuilder sb = new StringBuilder();
-            for(ListaAlumno listaAlumno : listaAlumnos){
-                sb.append(listaAlumno.getId()).append("  ");
-                sb.append(listaAlumno.getName()).append(" ");
-                sb.append(listaAlumno.getApellidos()).append(" ");
-
-            }
-            dbalumno.setText(sb.toString());
-        });*/
-       setupList();
+        setupList();
 
     }
-
-
-
 
     private void setupList() {
         mList = findViewById(R.id.list);
@@ -80,7 +63,19 @@ public class Alumno extends AppCompatActivity  {
             public void onDeleteIconClicked(ListaAlumno listaAlumno) {
                         mViewModel.deleteAlumno(listaAlumno);
             }
+
+            @Override
+            public void UpdateIconClick(ListaAlumno listaAlumno) {
+                DialogFragment dialog = new FragmentAlumno(listaAlumno);
+                dialog.show(getSupportFragmentManager(),"alumnooos");
+            }
         });
         mViewModel.getListaAlumnos().observe(this, mAdapter::setItems);
+    }
+
+
+    @Override
+    public void onClickUpdate(ListaAlumno listaAlumnos) {
+        mViewModel.updateAlumno(listaAlumnos);
     }
 }

@@ -5,15 +5,17 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.matriculacion.Dialogo.FragmentAsignatura;
 import com.example.matriculacion.add.AnadirAsignatura;
 import com.example.matriculacion.data.ListaAsignatura;
 import com.example.matriculacion.editlista.AsignaturaViewModel;
 import com.example.matriculacion.editlista.ListAdapterAsig;
 
-public class Asignatura extends AppCompatActivity  {
+public class Asignatura extends AppCompatActivity implements FragmentAsignatura.Fragmentupdateasig {
 
 private AsignaturaViewModel mviewModel;
     private RecyclerView mList;
@@ -39,28 +41,14 @@ private AsignaturaViewModel mviewModel;
         addasig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //codigo para añadir con el dialogo
-           /*     DialogFragment simple = new SimpleDialogFrag();
-                simple.show(getSupportFragmentManager(),"prueba");*/
+
 
                 //este lleva a la actividad de añadir
                 Intent intentañadir = new Intent (v.getContext(), AnadirAsignatura.class);
                 startActivityForResult(intentañadir, 0);
             }
         });
-
- /*       mviewModel.getListaAsignaturas().observe(this,listaAsignaturas -> {
-            StringBuilder sb =  new StringBuilder();
-            for (ListaAsignatura list : listaAsignaturas){
-                sb.append(list.getCodigo()).append("  ");
-                sb.append(list.getNombre()).append("\n");
-            }
-            dbasig.setText(sb.toString());
-        });*/
-
         setuplist();
-
-
     }
 
 
@@ -80,11 +68,22 @@ private AsignaturaViewModel mviewModel;
 
             @Override
             public void onDeleteIconClicked(ListaAsignatura listaAsignatura) {
-                mviewModel.borrarasignatura(listaAsignatura);
+                mviewModel.borrarasignaturaviewmodel(listaAsignatura);
+            }
+
+            @Override
+            public void onClickUpdate(ListaAsignatura listaAsignatura) {
+                   //llamo fragemnento asignatura
+                DialogFragment dialogFragmentasig = new FragmentAsignatura(listaAsignatura);
+                dialogFragmentasig.show(getSupportFragmentManager(),"asignatura");
             }
         });
         mviewModel.getListaAsignaturas().observe(this, mAdapter::setItemsAsig);
     }
 
 
+    @Override
+    public void onClickUpdate(ListaAsignatura listaAsignatura) {
+        mviewModel.actualizarasignaturaviewmodel(listaAsignatura);
+    }
 }

@@ -6,8 +6,6 @@
     android:padding="10dp"
     android:layout_height="?listPreferredItemHeight">
 
-
-
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
@@ -20,25 +18,37 @@
         tools:text="Lista de ejemplo" />
 
     <ImageView
-        android:id="@+id/borrar"
+        android:id="@+id/borraritemalum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:paddingRight="20dp"
         app:srcCompat="@drawable/ic_delete_24"
         android:minWidth="0dp"
         android:minHeight="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/mas"
+        app:layout_constraintEnd_toStartOf="@+id/updateitemalum"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/mas"
+        android:id="@+id/updateitemalum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="20dp"
+        app:srcCompat="@drawable/ic_update_24"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fechaitemalum"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/fechaitemalum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_fecha_24" />
+        app:srcCompat="@drawable/ic_fecha_24"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

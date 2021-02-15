@@ -12,11 +12,11 @@ public class ListaAsignatura {
     @PrimaryKey
     @NonNull
     @ColumnInfo(name = "codigo")
-    private final String mCodigo;
+    private  String mCodigo;
 
     @NonNull
     @ColumnInfo(name = "nombre")
-    private final String mNombre;
+    private  String mNombre;
 
 
     public ListaAsignatura(@NonNull String codigo, @NonNull String nombre) {
@@ -34,5 +34,13 @@ public class ListaAsignatura {
     public String getNombre() {
 
         return mNombre;
+    }
+
+    public void setmCodigo(@NonNull String mCodigo) {
+        this.mCodigo = mCodigo;
+    }
+
+    public void setmNombre(@NonNull String mNombre) {
+        this.mNombre = mNombre;
     }
 }

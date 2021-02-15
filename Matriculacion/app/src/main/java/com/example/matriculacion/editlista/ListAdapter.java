@@ -54,54 +54,47 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
     public interface ItemListener{
         void onClick(ListaAlumno listaAlumno);
         void onDeleteIconClicked(ListaAlumno listaAlumno);
+        void UpdateIconClick(ListaAlumno listaAlumno);
     }
     public  class ListViewHolder extends RecyclerView.ViewHolder {
 
         private final TextView mNameText;
         private final ImageView botonborrar;
-        private final ImageView botoneditar;
+        private final ImageView botonupdate;
       //  private final ImageView btndetalle;
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
             mNameText = itemView.findViewById(R.id.name);
-            botonborrar = itemView.findViewById(R.id.borrar);
-            botoneditar = itemView.findViewById(R.id.mas);
+            botonborrar = itemView.findViewById(R.id.borraritemalum);
+            botonupdate = itemView.findViewById(R.id.updateitemalum);
 
             //escuchar el item de borrar
             botonborrar.setOnClickListener(this::eventos);
+            botonupdate.setOnClickListener(this::eventos);
 
         }
 
         public void bind(ListaAlumno item) {
 
            // mNameText.setText(item.getId()+" "+item.getName() +" "+ item.getApellidos());
-                mNameText.setText(item.getName()+"\n"+item.getApellidos()+"\n"+item.getId());
+                mNameText.setText(item.getName()+" "+item.getApellidos()+"\n"+item.getId());
         }
 
         public void eventos(View view){
             if (itemListener!=null){
                 ListaAlumno click = mListaAlumnos.get(getAdapterPosition());
 
-                if (view.getId()==R.id.borrar){
+                if (view.getId()==R.id.borraritemalum){
                     itemListener.onDeleteIconClicked(click);
                     return;
+                }
+                if(view.getId()==R.id.updateitemalum){
+                    itemListener.UpdateIconClick(click);
                 }
                 itemListener.onClick(click);
             }
         }
-
- /*       public void bind2(ListaAsignatura item) {
-
-            mNameText.setText( item.getCodigo()+ ""+item.getNombre());
-        }*/
-
-     /*   public static com.example.matriculacion.editlista.ListViewHolder create(ViewGroup parent) {
-            View v = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.shopping_list_item, parent, false);
-            return new com.example.matriculacion.editlista.ListViewHolder(v);
-        }*/
-
 
     }
 

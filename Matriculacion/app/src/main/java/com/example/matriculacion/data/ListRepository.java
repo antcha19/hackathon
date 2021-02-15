@@ -50,4 +50,11 @@ public class ListRepository {
         ListDataBase.dbExecutor.execute(()-> mListaAlumnoDao.delete(listaAlumno));
     }
 
+    public void actualizarAlumno(ListaAlumno listaAlumno){
+        ListDataBase.dbExecutor.execute(()->mListaAlumnoDao.update(listaAlumno));
+    }
+    public void actualizarAsignatura(ListaAsignatura listaAsignatura){
+        ListDataBase.dbExecutor.execute(()->mListaAsignaturaDao.updateAsignaturaDao(listaAsignatura));
+    }
+
 }

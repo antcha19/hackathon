@@ -55,6 +55,7 @@ public class ListAdapterAsig extends RecyclerView.Adapter<ListAdapterAsig.ListVi
     public interface ItemListener{
         void onClick(ListaAsignatura listaAsignatura);
         void onDeleteIconClicked(ListaAsignatura listaAsignatura);
+        void onClickUpdate(ListaAsignatura listaAsignatura);
     }
     public  class ListViewHolderAsig extends RecyclerView.ViewHolder {
 
@@ -69,6 +70,7 @@ public class ListAdapterAsig extends RecyclerView.Adapter<ListAdapterAsig.ListVi
             botoneditar= itemView.findViewById(R.id.itemeditasig);
 
             botonborrar.setOnClickListener(this::eventosasig);
+            botoneditar.setOnClickListener(this::eventosasig);
         }
 
         public void eventosasig(View view){
@@ -79,6 +81,9 @@ public class ListAdapterAsig extends RecyclerView.Adapter<ListAdapterAsig.ListVi
                 if (view.getId()== R.id.itemborrarasig){
                     itemListener.onDeleteIconClicked(clickasig);
                     return;
+                }
+                if (view.getId()==R.id.itemeditasig){
+                    itemListener.onClickUpdate(clickasig);
                 }
                 itemListener.onClick(clickasig);
             }

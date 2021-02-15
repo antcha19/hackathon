@@ -6,6 +6,7 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import java.util.List;
 
@@ -21,4 +22,7 @@ public interface ListaAlumnoDao {
     //borrar
     @Delete(entity = ListaAlumno.class)
     void delete(ListaAlumno listaAlumno);
+
+    @Update(entity = ListaAlumno.class)
+    void update(ListaAlumno listaAlumno);
 }
