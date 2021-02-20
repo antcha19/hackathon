@@ -12,7 +12,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 
-@Database(entities = {ListaAsignatura.class,ListaAlumno.class}, version = 1, exportSchema = false)
+@Database(entities = {ListaAsignatura.class,ListaAlumno.class,AlumnoAsignatura.class}, version = 1, exportSchema = false)
 
 public  abstract class ListDataBase extends RoomDatabase {
 
@@ -20,8 +20,9 @@ public  abstract class ListDataBase extends RoomDatabase {
     //  public abstract ListaAsignaturaDao listaAsignaturaDao;
     public abstract ListaAsignaturaDao listaAsignaturaDao();
     public abstract ListaAlumnoDao listaAlumnoDao();
+    public abstract AlumnoAsignaturaDao alumnoAsignaturaDao();
 
-    private static final String DATABASE_NAME = "lista-db1";
+    private static final String DATABASE_NAME = "lista-db11";
 
     private static ListDataBase INSTANCE;
 

@@ -9,17 +9,22 @@ import java.util.List;
 public class ListRepository {
     private final LiveData<List<ListaAsignatura>> mListaAsignaturas;
     private final LiveData<List<ListaAlumno>> mListaAlumnos;
+    private final LiveData<List<AlumnoAsignatura>> mAlumnoAsignatura;
 
     private final ListaAsignaturaDao mListaAsignaturaDao;
     private final ListaAlumnoDao mListaAlumnoDao;
+    private final AlumnoAsignaturaDao mAlumnoAsignaturaDao;
 
     public ListRepository(Context context) {
         ListDataBase db = ListDataBase.getInstance(context);
         mListaAsignaturaDao = db.listaAsignaturaDao();
         mListaAlumnoDao =db.listaAlumnoDao();
+        mAlumnoAsignaturaDao=db.alumnoAsignaturaDao();
 
         mListaAsignaturas = mListaAsignaturaDao.getAll();
        mListaAlumnos = mListaAlumnoDao.getAll();
+       mAlumnoAsignatura = mAlumnoAsignaturaDao.getALL();
+
     }
 
     public LiveData<List<ListaAsignatura>> getAllListaAsignaturas() {
@@ -31,7 +36,12 @@ public class ListRepository {
         return mListaAlumnos;
     }
 
+    public LiveData<List<AlumnoAsignatura>> getAllAlumnoAsignatura() {
 
+        return mAlumnoAsignatura;
+    }
+
+    //insertar
     public void insertAsignatura(ListaAsignatura listaAsignatura) {
         ListDataBase.dbExecutor.execute(
                 () -> mListaAsignaturaDao.insert(listaAsignatura)
@@ -40,6 +50,9 @@ public class ListRepository {
 
     public void insertAlumno(ListaAlumno listaAlumno){
         ListDataBase.dbExecutor.execute(()-> mListaAlumnoDao.insert(listaAlumno));
+    }
+    public void insertAlumnoAsignatura(AlumnoAsignatura alumnoAsignatura){
+        ListDataBase.dbExecutor.execute(()->mAlumnoAsignaturaDao.insert(alumnoAsignatura));
     }
 
     //funcion para borrar

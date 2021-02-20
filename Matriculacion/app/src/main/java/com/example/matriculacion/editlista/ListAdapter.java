@@ -55,6 +55,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
         void onClick(ListaAlumno listaAlumno);
         void onDeleteIconClicked(ListaAlumno listaAlumno);
         void UpdateIconClick(ListaAlumno listaAlumno);
+        void relacionIconCLick(ListaAlumno listaAlumno);
     }
     public  class ListViewHolder extends RecyclerView.ViewHolder {
 
@@ -91,6 +92,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
                 }
                 if(view.getId()==R.id.updateitemalum){
                     itemListener.UpdateIconClick(click);
+                }
+                if (view.getId()==R.id.fechaitemalum){
+                    itemListener.relacionIconCLick(click);
                 }
                 itemListener.onClick(click);
             }

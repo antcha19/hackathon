@@ -69,6 +69,15 @@ public class Alumno extends AppCompatActivity implements FragmentAlumno.Fragment
                 DialogFragment dialog = new FragmentAlumno(listaAlumno);
                 dialog.show(getSupportFragmentManager(),"alumnooos");
             }
+
+            @Override
+            public void relacionIconCLick(ListaAlumno listaAlumno) {
+                Intent intentañadir = new Intent (Alumno.this, Asig_Alumno.class);
+                startActivityForResult(intentañadir, 0);
+
+            }
+
+
         });
         mViewModel.getListaAlumnos().observe(this, mAdapter::setItems);
     }

@@ -41,7 +41,7 @@ public class FragmentAlumno extends DialogFragment {
 
         builder.setView(view)
                 // Add action buttons
-                .setPositiveButton("Actulizar", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Actualizar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String nombrenuevo = nombre.getText().toString();

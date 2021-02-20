@@ -6,4 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".Asig_Alumno">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listaalumnoAsignatura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintHorizontal_bias="0.5"
+        tools:listitem="@layout/alumnoasignaturaitem"
+        android:layout_marginTop="30dp"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addrelacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        app:srcCompat="@drawable/ic_add_24"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="303dp"
+        tools:layout_editor_absoluteY="592dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
