@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Taller">
-        <activity android:name=".Registar"></activity>
+        <activity android:name=".InicioUsuario"></activity>
+        <activity android:name=".Registar" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity">
             <intent-filter>

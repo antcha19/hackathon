@@ -17,32 +17,45 @@
         android:textSize="60sp"
         tools:ignore="InvalidId" />
 
-    <EditText android:id="@+id/txtUserName"
+    <EditText android:id="@+id/RegUsuario"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:hint="Usuario"
         android:inputType="text" />
 
-    <EditText android:id="@+id/txtEmail"
-        android:layout_marginTop="15dip"
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        android:hint="Email"
-        android:inputType="textEmailAddress" />
-
-    <EditText android:id="@+id/txtPass"
+    <EditText android:id="@+id/Regpass"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:hint="Contraseña"
         android:inputType="textPassword"
+         />
+
+    <EditText android:id="@+id/RegNombre"
         android:layout_marginTop="15dip"
-        android:layout_marginBottom="30dip" />
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Nombre"
+        android:inputType="textEmailAddress" />
 
+    <EditText android:id="@+id/RegApellidos"
+        android:layout_marginTop="15dip"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:hint="Apellidos"
+        android:inputType="textEmailAddress" />
 
-    <Button android:id="@+id/btnRegister"
+    <Button android:id="@+id/RegbtnRegister"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="enviar"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip" />
+
+    <Button android:id="@+id/RegbtnCancelar"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Cancelar"
         android:layout_gravity="center_horizontal"
         android:paddingLeft="15dip"
         android:paddingRight="15dip" />
@@ -57,14 +70,6 @@
         android:textSize="20dip"
         android:textColor="#0b84aa"/>
 
-    <TextView android:id="@+id/register_error"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dip"
-        android:layout_marginBottom="40dip"
-        android:gravity="center"
-        android:textSize="20dip"
-        android:textColor="#0b84aa"/>
 
 
 </LinearLayout>
